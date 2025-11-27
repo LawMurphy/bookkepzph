@@ -1,0 +1,400 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f8fafc;
+  font-family: "Inter", sans-serif;
+}
+
+/* Container */
+.invoice-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 60px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.invoice-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.invoice-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.invoice-actions button {
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.invoice-actions button:hover {
+  background: #f3f4f6;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* Form Card */
+.invoice-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Top Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px 32px;
+}
+
+label {
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #2563eb;
+}
+
+/* Table */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.items-table th, .items-table td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.items-table thead th {
+  background: #f9fafb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.items-table td input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.items-table td input:focus {
+  outline: none;
+  background: #f9fafb;
+}
+
+.add-item {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* Notes + Totals */
+.notes-totals-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.notes-section {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.notes-label {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.notes-textarea {
+  width: 100%;
+  height: 130px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+  color: #374151;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.totals-section {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.totals-box {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  width: 230px;
+}
+
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.totals-row.total {
+  border-top: 1px solid #d1d5db;
+  padding-top: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* Attachments */
+.attachments-box {
+  border: 2px dashed #d1d5db;
+  border-radius: 10px;
+  text-align: center;
+  padding: 24px;
+  font-size: 14px;
+  color: #6b7280;
+  transition: 0.3s;
+  width: 500px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.attachments-box.dragover {
+  border-color: #2563eb;
+  background: #eef2ff;
+}
+
+.attachments-box input {
+  display: none;
+}
+
+.attachments-box span {
+  font-weight: 500;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* Buttons */
+.invoice-actions-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: -10px;
+  margin-right: 10px;
+  transform: translateY(-75px);
+}
+
+.btn-cancel, .btn-primary {
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-cancel {
+  background: #fff;
+  color: #374151;
+}
+
+.btn-cancel:hover {
+  background: #f3f4f6;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+  z-index: 100;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #374151;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.btn-cancel {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-cancel:hover {
+  background-color: #e2e8f0;
+}
+
+/* DRAG AREA */
+.attachments-box {
+    padding: 25px;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #f9f9f9;
+}
+
+.attachments-box.dragover {
+    border-color: #0ea5e9;
+    background: #e0f7ff;
+}
+
+.attachment-preview {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.file-item {
+    width: 110px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.file-item .thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.file-item i {
+    font-size: 40px;
+    color: #555;
+}
+
+.file-item span {
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+.remove-btn {
+    background: #dc2626;
+    color: #fff;
+    border: none;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}

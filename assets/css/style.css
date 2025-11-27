@@ -1,0 +1,169 @@
+/* Dark Brown + White Text Theme (Centered Layout) */
+:root {
+  --bg-color: #230f08;
+  --card-color: #773F1A;
+  --accent-color: #d1a86f;
+  --text-color: #ffffff;
+  --border-color: #705d48;
+}
+
+/* ---------- General Page ---------- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  background-image: url("../img/bookkepz_logo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 20, 15, 0.8);
+  backdrop-filter: blur(3px);
+  z-index: 0;
+}
+
+/* ---------- Card Container ---------- */
+.container {
+  position: relative;
+  z-index: 1;
+  background-color: var(--card-color);
+  border-radius: 12px;
+  padding: 40px 35px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------- Logo & Headers ---------- */
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+}
+
+h1, h2 {
+  color: var(--accent-color);
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Form Fields ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+form.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+label {
+  text-align: left;
+  color: #f2e5d5;
+  font-size: 14px;
+}
+
+input, select {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: #5a4635;
+  color: var(--text-color);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+/* ---------- Buttons ---------- */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--accent-color);
+  color: #2c1d0f;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #e1b87e;
+  transform: scale(1.03);
+}
+
+/* ---------- Messages ---------- */
+.error, .msg, .success {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.error {
+  background: #d9534f;
+  color: #fff;
+}
+
+.msg, .success {
+  background: #4caf50;
+  color: #fff;
+}
+
+/* ---------- Links ---------- */
+p {
+  color: #f8f8f8;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+p a {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+p a:hover {
+  color: #ffcd88;
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 25px 20px;
+  }
+  h1, h2 {
+    font-size: 20px;
+  }
+}

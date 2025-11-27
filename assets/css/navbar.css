@@ -1,0 +1,117 @@
+/* ==========================
+   NAVBAR STYLING - Bookkepz
+   ========================== */
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li {
+  position: relative;
+}
+
+/* 🌟 Base link style */
+.nav-links ul li a {
+  text-decoration: none;
+  color: #f8f8f8;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 12px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover color effect */
+.nav-links ul li a:hover,
+.nav-links ul li a.active {
+  color: var(--primary);
+  text-shadow: 0px 0px 6px rgba(139, 94, 60, 0.3);
+}
+
+/* 🔹 Dropdown Menu */
+.nav-links ul li .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 180px;
+  z-index: 100;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-links ul li .dropdown-menu li a {
+  color: #3E2E20;
+  display: block;
+  padding: 10px 15px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-links ul li .dropdown-menu li a:hover {
+  background: var(--accent);
+  color: var(--primary);
+  border-radius: 8px;
+  transform: translateX(5px);
+}
+
+/* 🔸 Show dropdown on hover */
+.nav-links ul li.has-dropdown:hover .dropdown-menu {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 🔹 Underline animation */
+.nav-links ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links ul li a:hover::after,
+.nav-links ul li a.active::after {
+  width: 100%;
+}
+
+/* 💫 Floating text animation when hovered */
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+/* Apply floating animation on hover */
+.nav-links ul li:hover > a {
+  animation: floatText 1s ease-in-out infinite;
+}
+
+.datetime {
+  font-size: 14px;
+  color: #f8f8f8;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  min-width: 250px;
+  text-align: right;
+}
+
+#current-time {
+  transition: opacity 0.3s ease;
+}
